@@ -1,0 +1,201 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	font-family: "Montserrat", sans-serif;
+	color: rgb(255, 255, 255);
+	background-image: url(./img/forest.jpg);
+	background-position: bottom, right 20%;
+	background-size: cover;
+	font-size: 20px;
+	text-shadow: 2px 2px 2px black;
+}
+
+h1 {
+	text-transform: uppercase;
+	text-align: center;
+	padding: 10px;
+}
+
+input {
+	font-size: 16px;
+	padding: 5px 10px;
+	margin-top: 10px;
+	background: none;
+	border: none;
+	color: #fff;
+	border-bottom: 2px solid #ddd;
+}
+
+input::placeholder {
+	color: #ddd;
+	font-family: "Montserrat", sans-serif;
+}
+
+button {
+	padding: 10px;
+	margin-left: 20px;
+	color: #fff;
+	font-weight: bold;
+	background: none;
+	border-radius: 5px;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: background-color 0.3s, color 0.3s;
+	text-shadow: 2px 2px 2px black;
+}
+
+button:hover {
+	color: black;
+	background-color: #dddddd3b;
+	text-shadow: none;
+}
+
+.wrapper {
+	position: relative;
+	width: 800px;
+	height: 520px;
+	padding: 20px 40px;
+	overflow: hidden;
+	border: 1px solid white;
+	box-shadow: 3px 3px rgba(0, 0, 0, 0.4), -3px -3px rgba(0, 0, 0, 0.4);
+	border-radius: 15px;
+	transition: 0.8s;
+	/* z-index: 100; */
+}
+
+.blur-one {
+	position: relative;
+}
+.blur-reverse {
+	/* position: relative; */
+	/* top: 50%;
+	left: 50%; 
+	transform: translate(-50%, -50%); */
+
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	/* background-color: #fff; */
+	background-image: url(./img/forest.jpg);
+	border-radius: 10px;
+	box-shadow: 3px 3px rgba(0, 0, 0, 0.4), -3px -3px rgba(0, 0, 0, 0.4);
+
+	transform: scale(0.1);
+
+	transition: 1s;
+	display: none;
+}
+
+.blur-reverse-show {
+	position: absolute;
+	animation-name: grow;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+
+	display: block;
+}
+
+.wrapper::before {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	height: 100%;
+	/* top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0; */
+	background-color: rgba(0, 0, 0, 0.169);
+	backdrop-filter: blur(1.3px);
+	/* z-index: -100; */
+}
+
+.moreinfo {
+	height: 200px;
+	margin: 10px;
+}
+
+.top {
+	height: 260px;
+}
+
+.bottom {
+	height: 140px;
+}
+
+.main-info {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 200px;
+}
+
+.city-name {
+	font-size: 40px;
+}
+
+.headings,
+.headings-2,
+.weather-info {
+	display: flex;
+	align-items: center;
+}
+
+.headings p,
+.headings-2 p,
+.weather-info p {
+	width: 33.3%;
+	text-align: center;
+}
+
+.headings {
+	height: 35%;
+	text-transform: uppercase;
+	font-weight: bold;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+.headings-2 {
+	position: relative;
+	top: -100%;
+	height: 35%;
+	text-transform: uppercase;
+	font-weight: bold;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+.weather-info {
+	height: 65%;
+	font-size: 26px;
+}
+
+.photo {
+	width: 140px;
+	height: 140px;
+	object-fit: contain;
+}
+
+.warning {
+	margin-top: 10px;
+	font-size: 14px;
+	color: tomato;
+}
+
+@keyframes grow {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
