@@ -80,8 +80,14 @@ function toggler (){
     blurReverseV.classList.toggle("blur-reverse-show")
 }
 
+const checkEnter = (e) => {
+    if(e.key==="Enter"){
+        getWeather()
+    }
+}
 
 
+inputV.addEventListener("keypress", checkEnter)
 buttonV.addEventListener("click", getWeather)
 showDetails.forEach((x) => x.addEventListener("click", toggler))
 
